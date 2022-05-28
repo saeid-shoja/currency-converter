@@ -1,0 +1,22 @@
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+}
+
+.navbarButton {
+  all: unset;
+  height: 5rem;
+  background: rgb(186, 232, 148);
+  font-size: x-large;
+}
+
+.navbarButton:hover,
+.activeBtn {
+  background: rgb(49, 157, 49);
+  font-size: xx-large;
+}
+
+.selectInput {
+  width: 5rem;
+  height: 5rem;
+}

@@ -1,0 +1,63 @@
+.currentPage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5em;
+  margin-top: 12em;
+}
+
+.currentPageRows {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.currentPageRows > div {
+  width: 40%;
+  height: 5rem;
+  background: rgb(229, 240, 69);
+  margin-bottom: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.convertIcon {
+  font-size: 5rem;
+}
+
+.converter {
+  margin-top: 12em;
+}
+.converter > div {
+  margin-bottom: 2em;
+}
+
+.amountInput {
+  width: 20rem;
+  height: 3rem;
+  padding: 1em;
+}
+
+.defaultForm {
+  margin-top: 15em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.defaultForm select,
+.defaultForm button {
+  width: 80%;
+  height: 5rem;
+  margin-top: 2em;
+  border-radius: 1.5rem;
+  padding: 0 1em;
+}
+
+.defaultForm button {
+  background: rgb(89, 175, 89);
+}
