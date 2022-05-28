@@ -37,8 +37,6 @@ function App() {
       .catch((err) => console.log(err.message));
   };
 
-  console.log({ defaultCurrency, currencies });
-
   return (
     <div className="App">
       <Routes>

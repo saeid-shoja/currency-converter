@@ -11,10 +11,16 @@ export const converterSlice = createSlice({
   name: "currencies",
   initialState,
   reducers: {
-    setCurrencies: (state, action: PayloadAction<stateObject[]>) => {
+    setCurrencies: (
+      state: { currencies: stateObject[] },
+      action: PayloadAction<stateObject[]>
+    ) => {
       state.currencies = action.payload;
     },
-    changeDefaultCurrency: (state, action: PayloadAction<string>) => {
+    changeDefaultCurrency: (
+      state: { defaultCurrency: string },
+      action: PayloadAction<string>
+    ) => {
       state.defaultCurrency = action.payload;
     },
   },
