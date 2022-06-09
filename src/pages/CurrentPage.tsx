@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { CgArrowsExchangeAlt } from "react-icons/cg";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { selectCurrencies } from "../features/store";
+import { selectCurrencies } from "../reduxFeatures/store";
 import styles from "./pages.module.css";
 
 const CurrentPage = () => {

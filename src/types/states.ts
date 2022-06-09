@@ -6,4 +6,5 @@ export type stateObject = {
 export type statesType = {
   defaultCurrency: string;
   currencies: stateObject[];
+  isLoading: boolean;
 };

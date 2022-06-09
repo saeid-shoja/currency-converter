@@ -1,17 +1,16 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { Provider } from "react-redux";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import "./App.css";
-import store, {
+import {
   changeDefaultCurrency,
   selectCurrencies,
   setCurrencies,
-} from "./features/store";
+  getCurrenciesFetch,
+} from "./reduxFeatures/store";
 import DefaultCurrency from "./pages/DefaultCurrency";
 import Home from "./pages/Home";
-import axios from "axios";
 
 function App() {
   const { currencies, defaultCurrency } = useSelector(selectCurrencies);
@@ -19,23 +18,16 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchCurrencies();
+    dispatch(getCurrenciesFetch());
     const isDefaultCurrency = localStorage.getItem("defaultCurrency");
     if (isDefaultCurrency) {
       dispatch(changeDefaultCurrency(JSON.parse(isDefaultCurrency)));
     } else {
       navigate("default-currency");
     }
-  }, [defaultCurrency, currencies]);
+  }, [dispatch]);
 
-  const fetchCurrencies = () => {
-    axios
-      .get(
-        "https://api.currencyapi.com/v3/latest?apikey=v4RfQ88obCDxQDtIMdBlcZkqsKByjz2eFZv5CbOz"
-      )
-      .then((res) => dispatch(setCurrencies(res.data.data)))
-      .catch((err) => console.log(err.message));
-  };
+  console.log(currencies);
 
   return (
     <div className="App">
@@ -50,9 +42,7 @@ function App() {
 const AppWrapper = () => {
   return (
     <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <App />
     </BrowserRouter>
   );
 };

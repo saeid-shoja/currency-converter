@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import SelectInputs from "../components/Inputs";
-import { selectCurrencies } from "../features/store";
+import { selectCurrencies } from "../reduxFeatures/store";
 import styles from "./pages.module.css";
 
 const Converter = () => {

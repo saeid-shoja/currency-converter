@@ -5,7 +5,7 @@ import {
   selectCurrencies,
   changeDefaultCurrency,
   AppDispatch,
-} from "../features/store";
+} from "../reduxFeatures/store";
 import styles from "./pages.module.css";
 
 const DefaultCurrency = () => {
